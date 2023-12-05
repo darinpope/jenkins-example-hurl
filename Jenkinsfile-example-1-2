@@ -6,13 +6,6 @@ pipeline {
         sh 'hurl --version'
       }
     }
-    stage('Test the 200') {
-      steps {
-        dir('example-1') {
-          sh 'hurl basic-200.hurl'
-        }
-      }
-    }
     stage('Test the 200 using test') {
       steps {
         dir('example-1') {

@@ -1,0 +1,13 @@
+pipeline {
+  agent any
+  stages {
+    stage('Test the 200') {
+      steps {
+        dir('example-1') {
+          sh 'hurl --no-output --test  --report-junit test-results.xml basic-200.hurl'
+          junit 'test-results.xml'
+        }
+      }
+    }
+  }
+}

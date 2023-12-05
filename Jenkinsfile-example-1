@@ -9,7 +9,7 @@ pipeline {
     stage('') {
       steps {
         dir('example-1') {
-          sh 'hurl basic.hurl'
+          sh 'hurl --no-output basic.hurl'
         }
       }
     }

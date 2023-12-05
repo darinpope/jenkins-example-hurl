@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Test the 200') {
+    stage('Run all the tests') {
       steps {
         dir('example-3') {
           sh 'hurl --no-output --test  --report-junit test-results.xml --glob "*.hurl"'

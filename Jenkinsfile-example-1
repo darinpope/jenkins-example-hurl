@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+  stages {
+    stage('Verify Hurl installation') {
+      steps {
+        sh 'hurl --version'
+      }
+    }
+    stage('') {
+      steps {
+        dir('example-1') {
+          sh 'hurl basic.hurl'
+        }
+      }
+    }
+  }
+}

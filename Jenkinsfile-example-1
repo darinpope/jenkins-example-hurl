@@ -6,10 +6,17 @@ pipeline {
         sh 'hurl --version'
       }
     }
-    stage('') {
+    stage('Test the 200') {
       steps {
         dir('example-1') {
-          sh 'hurl --no-output basic.hurl'
+          sh 'hurl basic-200.hurl'
+        }
+      }
+    }
+    stage('Test the 500') {
+      steps {
+        dir('example-1') {
+          sh 'hurl --no-output basic-500.hurl'
         }
       }
     }

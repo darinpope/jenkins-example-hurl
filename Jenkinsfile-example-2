@@ -1,0 +1,20 @@
+pipeline {
+  agent any
+  environment {
+    TEST_HOST="https://www.jenkins.io/"
+  }
+  stages {
+    stage('Verify Hurl installation') {
+      steps {
+        sh 'hurl --version'
+      }
+    }
+    stage('Test the 200') {
+      steps {
+        dir('example-1') {
+          sh 'hurl --no-output --variable host=$TEST_HOST --test basic-200.hurl'
+        }
+      }
+    }
+  }
+}
